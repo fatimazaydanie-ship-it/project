@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore The World</title>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Explore.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+        <button class="explore-btn" onclick="scrollToDestinations()">Explore Now</button>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <h2>DISCOVER THE WORLD</h2>
+            <h1>Explore The <br><span>Beautiful World</span></h1>
+            <p>Discover amazing places, explore different cultures and experience unforgettable journeys.</p>
+            <button class="start-btn" onclick="scrollToDestinations()">Start Exploring</button>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <div class="section-title">
+            <span>YOUR NEXT ADVENTURE</span>
+            <h2>Popular Destinations</h2>
+            <p>Explore some of the most beautiful cities in the world.</p>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-info">
+                <div>
+                    <div class="card-header-num" id="card-num">01 / 04</div>
+                    <div class="card-country" id="card-country">FRANCE</div>
+                    <h3 id="card-title">Paris</h3>
+                    <p id="card-desc">Paris is one of the most beautiful cities in the world, famous for its art, architecture and romantic atmosphere.</p>
+                    
+                    <div class="card-details-grid">
+                        <div class="detail-item">
+                            <span>Continent</span>
+                            <strong id="card-continent">Europe</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Famous Food</span>
+                            <strong id="card-food">Croissant, Macarons</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Famous Place</span>
+                            <strong id="card-place">Eiffel Tower</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Language</span>
+                            <strong id="card-lang">French</strong>
+                        </div>
+                    </div>
+                </div>
+                <button class="explore-more-btn" onclick="openExploreAlert()">Explore More</button>
+            </div>
+            
+           
+            <div class="card-image">
+                <img id="card-img" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Destination Image">
+                <div class="card-image-badge">
+                    <span>DESTINATION</span>
+                    <strong id="img-num-label">01</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous / Next Controls & Dots -->
+        <div class="controls">
+            <button class="control-btn" onclick="prevDestination()">&larr; Previous</button>
+            <div class="dots" id="dots-container">
+                <span class="dot active" onclick="goToDestination(0)"></span>
+                <span class="dot" onclick="goToDestination(1)"></span>
+                <span class="dot" onclick="goToDestination(2)"></span>
+                <span class="dot" onclick="goToDestination(3)"></span>
+            </div>
+            <button class="control-btn" onclick="nextDestination()">Next &rarr;</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>Travel. Discover. Enjoy.</h2>
+        <p>Every destination has a story. Let's discover it together.</p>
+        <div class="copyright">&copy; 2026 Explore The World. All Rights Reserved.</div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        const destinationsData = [
+            {
+                num: "01 / 04",
+                country: "FRANCE",
+                title: "Paris",
+                desc: "Paris is one of the most beautiful cities in the world, famous for its art, architecture and romantic atmosphere.",
+                continent: "Europe",
+                food: "Croissant, Macarons",
+                place: "Eiffel Tower",
+                lang: "French",
+                imgNum: "01",
+                
+                imgUrl: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+                alertText: "Discover Paris in FRANCE!\nFamous Place: Eiffel Tower"
+            },
+            {
+                num: "02 / 04",
+                country: "JAPAN",
+                title: "Tokyo",
+                desc: "Tokyo is a modern city that combines advanced technology with traditional Japanese culture.",
+                continent: "Asia",
+                food: "Sushi, Ramen",
+                place: "Tokyo Tower",
+                lang: "Japanese",
+                imgNum: "02",
+                
+                imgUrl: "https://i.pinimg.com/736x/f3/f4/9c/f3f49c9ce3b5583e7811fdf3dad8047c.jpg",
+                alertText: "Discover Tokyo in JAPAN!\nFamous Place: Tokyo Tower"
+            },
+            {
+                num: "03 / 04",
+                country: "ITALY",
+                title: "Rome",
+                desc: "Rome is famous for its ancient history, beautiful architecture and delicious Italian food.",
+                continent: "Europe",
+                food: "Pizza, Pasta",
+                place: "Colosseum",
+                lang: "Italian",
+                imgNum: "03",
+                
+                imgUrl: "https://i.pinimg.com/736x/d0/a9/40/d0a94012ebf06928574da023d2aeed7a.jpg",
+                alertText: "Discover Rome in ITALY!\nFamous Place: Colosseum"
+            },
+            {
+                num: "04 / 04",
+                country: "EGYPT",
+                title: "Cairo",
+                desc: "Cairo is a historic city known for its ancient Egyptian civilization and famous landmarks.",
+                continent: "Africa",
+                food: "Koshari, Foul",
+                place: "Pyramids",
+                lang: "Arabic",
+                imgNum: "04",
+                
+                 imgUrl :"https://i.pinimg.com/1200x/9d/b0/3a/9db03a7d1c4e48ec2da4825bc8d36256.jpg",
+                alertText: "Discover Cairo in EGYPT!\nFamous Place: Pyramids"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function updateDestination() {
+            const data = destinationsData[currentIndex];
+            document.getElementById('card-num').innerText = data.num;
+            document.getElementById('card-country').innerText = data.country;
+            document.getElementById('card-title').innerText = data.title;
+            document.getElementById('card-desc').innerText = data.desc;
+            document.getElementById('card-continent').innerText = data.continent;
+            document.getElementById('card-food').innerText = data.food;
+            document.getElementById('card-place').innerText = data.place;
+            document.getElementById('card-lang').innerText = data.lang;
+            document.getElementById('img-num-label').innerText = data.imgNum;
+            document.getElementById('card-img').src = data.imgUrl;
+
+            
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        function nextDestination() {
+            currentIndex = (currentIndex + 1) % destinationsData.length;
+            updateDestination();
+        }
+
+        function prevDestination() {
+            currentIndex = (currentIndex - 1 + destinationsData.length) % destinationsData.length;
+            updateDestination();
+        }
+
+        function goToDestination(index) {
+            currentIndex = index;
+            updateDestination();
+        }
+
+        function scrollToDestinations() {
+            document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openExploreAlert() {
+            alert(destinationsData[currentIndex].alertText);
+        }
+    </script>
+</body>
+</html>

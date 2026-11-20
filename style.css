@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #111;
+}
+
+.explore-btn {
+    background-color: #111827;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #374151;
+}
+
+/* Home Section */
+#home {
+    height: 72vh;
+    min-height: 480px;
+    margin-top: 70px;
+    background: linear-gradient(120deg, #2b3a4a 0%, #4b6584 50%, #a5b1c2 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 110px;
+}
+
+.home-content h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #e0a96d;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.home-content h1 {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+.home-content h1 span {
+    color: #e0a96d;
+}
+
+.home-content p {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 25px;
+    max-width: 440px;
+    line-height: 1.6;
+}
+
+.start-btn {
+    background-color: #d99b52;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #c2853e;
+}
+
+/* Destinations Section */
+#destinations {
+    padding: 100px 50px 70px;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c2853e;
+    font-weight: 600;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: #111827;
+    margin: 6px 0;
+}
+
+.section-title p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Destination Card Box */
+.destination-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1050px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    display: flex;
+    overflow: hidden;
+    padding: 25px;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.card-info {
+    flex: 1;
+    padding: 15px 10px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header-num {
+    font-size: 13px;
+    color: #c2853e;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card-country {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.card-info h3 {
+    font-size: 34px;
+    color: #111827;
+    margin-bottom: 14px;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.card-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 12px;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.detail-item strong {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.explore-more-btn {
+    background-color: #1e293b;
+    color: #ffffff;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.explore-more-btn:hover {
+    background-color: #0f172a;
+}
+
+
+.card-image {
+    width: 480px;
+    height: 360px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-image-badge {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-image-badge span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.card-image-badge strong {
+    font-size: 18px;
+    color: #c2853e;
+    font-weight: bold;
+}
+
+/* Controls (Previous / Next) */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.control-btn {
+    background-color: #1e293b;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #0f172a;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dot.active {
+    background-color: #c2853e;
+    transform: scale(1.2);
+}
+
+/* About Us Section */
+#about {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: #fff;
+    text-align: center;
+    padding: 65px 20px 45px;
+}
+
+#about h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+#about p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
